@@ -1,0 +1,4 @@
+include:
+  - project: 'cosmic/sleapi/sle-api-infrastructure'
+    ref: main
+    file: 'gitlab/.cgi.sleapijava.gitlab-ci.yml'

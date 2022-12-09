@@ -1,0 +1,23 @@
+# --------------------------------------------
+# SLE API Package - V-2.0 or higher - Nov. 2004
+# Service Element Configuration File - PROVIDER 
+#          == EXAMPLE ONLY ==
+# --------------------------------------------
+
+APPLICATION_ROLE = PROVIDER
+#
+# port to protocol mapping
+PORTLIST  = {
+  # (peer responder port identifier) = (protocol id)
+  default = ISP1
+}
+#
+# minimum and maximum acceptable reporting cycle (seconds)
+MIN_REPORTINGCYCLE = 10
+MAX_REPORTINGCYCLE = 600
+#
+# maximum length of trace output for strings (characters)
+MAX_TRACE_LENGTH	= 64
+#
+# ----------------- end of file ----------------
+

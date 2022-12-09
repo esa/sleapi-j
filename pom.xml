@@ -1,0 +1,117 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>esa.sle.java</groupId>
+	<artifactId>esa.sle.java</artifactId>
+	<packaging>pom</packaging>
+	<version>5.1.4-SNAPSHOT</version>
+
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<tycho.version>1.3.0</tycho.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<sle.version>SLE Version 5</sle.version>
+		<juno-repo.url>http://download.eclipse.org/releases/juno</juno-repo.url>
+	</properties>
+
+
+	<distributionManagement>
+		<repository>
+			<id>vsdenexus</id>
+			<url>https://vsdenexus.esoc.esa.int/nexus/content/repositories/systems-accepted</url>
+		</repository>
+	</distributionManagement>
+
+
+	<modules>
+		<module>esa.sle.java.api.target</module>
+		<module>esa.sle.java.api.core</module>
+		<module>esa.sle.java.api.core.test</module>
+		<module>esa.sle.java.api.core.test.harness</module>
+		<module>esa.sle.java.api.feature</module>
+		<module>esa.sle.java.api.feature.p2</module>
+		<module>esa.sle.java.api.product</module>
+		<module>esa.sle.osgi</module>
+		<module>esa.sle.service.loader</module>
+		<module>esa.sle.sicf.si.parser.file</module>
+		<module>esa.sle.sicf.si.descriptors</module>
+		<module>esa.sle.si.repository</module>
+
+	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.beanit</groupId>
+				<artifactId>jasn1-compiler</artifactId>
+				<version>1.11.2</version>
+			</dependency>
+			<dependency>
+				<groupId>com.beanit</groupId>
+				<artifactId>jasn1</artifactId>
+				<version>1.11.2</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<extensions>true</extensions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho.version}</version>
+				<configuration>
+					<pomDependencies>consider</pomDependencies>
+					<!-- Enable the use of the target platform -->
+					<target>
+						<artifact>
+							<groupId>esa.sle.java</groupId>
+							<artifactId>esa.sle.java.api.target</artifactId>
+							<version>5.1.4-SNAPSHOT</version>
+						</artifact>
+					</target>
+
+					<environments>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.8</version>
+                                <executions>
+                                        <execution>
+                                                <id>default-deploy</id>
+                                                <phase>deploy</phase>
+                                                <goals>
+                                                        <goal>deploy</goal>
+                                                </goals>
+                                        </execution>
+                                </executions>
+                                <extensions>true</extensions>
+                                <configuration>
+                                        <nexusUrl>${project.staging.repository.url}</nexusUrl>
+					<serverId>${project.staging.repository.id}</serverId>
+					<skipStaging>true</skipStaging>
+                                </configuration>
+                        </plugin>
+
+		</plugins>
+	</build>
+
+</project>

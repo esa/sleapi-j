@@ -1,0 +1,92 @@
+# --------------------------------------------
+# SLE API Package - V-2.0 or higher - Nov. 2004
+# Proxy Configuration File - PROVIDER 
+#          == EXAMPLE ONLY ==
+# --------------------------------------------
+
+PROXY_ROLE = RESPONDER
+#
+# local application identifier
+LOCAL_ID = SLENET-GSX-TLM
+# local password (in hex nibbles)
+LOCAL_PASSWORD = 000102030405060708090a0b0c0d0e0f
+#
+# list of the supported services/versions
+SERVER_TYPES ={
+   SRV_ID = RAF
+   SRV_VERSION = {
+      1
+   }
+   #
+   SRV_ID = RCF
+   SRV_VERSION = {
+      1
+   }
+}
+#
+# list of remote peers
+REMOTE_PEERS = {
+   # peer username
+   ID = XSAT-MCS
+   # peer password (in hex nibbles)
+   PASSWORD = ffdf01449809e4e5e677818892
+   # authentication mode (NONE or BIND or ALL)
+   AUTHENTICATION_MODE = BIND
+   #
+   ID = YSAT-MCC
+   PASSWORD = 998852535423a67babcd01
+   AUTHENTICATION_MODE = ALL
+}
+#
+# list of local responder ports
+LOCAL_LOGICAL_PORTS = {
+   # logical port name
+   PORT_NAME = GSX-TM1
+   # accept connect requests from any local interface
+   IP_ADDRESS = {
+      *:5008
+   }
+   TCP_XMIT_BUFFER_SIZE = 32768
+   TCP_RECV_BUFFER_SIZE = 32768
+}
+#
+# maximum transmit queue size (PDUs)
+TRANSMIT_QUEUE_SIZE = 10
+#
+# maximum authentication delay (seconds)
+AUTHENTICATION_DELAY = 180
+#
+#TML Parameters
+#--------------
+# maximum allowed time until successful TML connection (seconds)
+STARTUP_TIMER = 180
+#
+# do we allow incoming connections proposing non-use of heartbeat?
+NON_USEHEARTBEAT = FALSE
+#
+# minimum and maximum acceptable value for heartbeat timer (seconds)
+MIN_HEARTBEAT = 20
+MAX_HEARTBEAT = 60
+#
+# minimum and maximum acceptable value for heartbeat dead factor
+MIN_DEADFACTOR = 2
+MAX_DEADFACTOR = 10
+#
+# IPC Parameters
+# --------------
+#
+# interprocess communication address used by communication server
+CS_ADDRESS = SLE_CS
+#
+# is Nagle algorithm enabled for interprocess communication with communication server?
+# USE_NAGLE is optional, default value is TRUE
+USE_NAGLE = TRUE
+#
+# interprocess communication address used by default logger
+DEFAULT_REPORTING_ADDRESS = SLE_DEF_REPORT
+#
+# maximum length of trace output for strings (characters)
+MAX_TRACE_LENGTH = 64
+#
+# ------------ end of file ---------------------------------------
+

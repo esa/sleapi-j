@@ -1,0 +1,13 @@
+bin
+.settings
+.svn
+dist
+.metadata
+sleapij*.tar
+*/export/
+THLoopProvider_*.ctl
+target
+
+# Ignore generated files
+**/generated/**
+**/src_generated/**

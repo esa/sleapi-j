@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: esa.sle.osgi
+Bundle-SymbolicName: esa.sle.osgi
+Bundle-Version: 5.1.4.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8,JavaSE-11
+Export-Package: esa.sle.osgi, esa.sle.osgi.impl
+Require-Bundle: org.eclipse.osgi;bundle-version="3.10.1",
+ org.eclipse.osgi.services;bundle-version="3.4.0",
+ esa.sle.java.api.core;bundle-version="5.1.1"

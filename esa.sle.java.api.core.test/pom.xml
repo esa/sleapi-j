@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>esa.sle.java</groupId>
+		<artifactId>esa.sle.java</artifactId>
+		<version>5.1.4-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>esa.sle.java.api.core.test</artifactId>
+	<packaging>eclipse-test-plugin</packaging>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-surefire-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<configuration>
+					<!-- forkMode must be always for the environemnt variable setting -->
+					<forkMode>always</forkMode>
+					<environmentVariables>
+					</environmentVariables>
+
+					<!-- the osgi declarative service is an implicit dependency, so list 
+						it here to get it on-board for the test -->
+					<dependencies>
+						<dependency>
+							<type>p2-installable-unit</type>
+							<artifactId>org.eclipse.equinox.ds</artifactId>
+						</dependency>
+					</dependencies>
+
+					<useUIHarness>false</useUIHarness>
+					<systemProperties>
+					</systemProperties>
+			
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

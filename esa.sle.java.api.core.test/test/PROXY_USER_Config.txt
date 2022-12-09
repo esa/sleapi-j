@@ -1,0 +1,94 @@
+# --------------------------------------------
+# SLE API Package - V-2.0 or higher - Nov. 2004
+# Proxy Configuration File - USER 
+#          == EXAMPLE ONLY ==
+# --------------------------------------------
+
+PROXY_ROLE = INITIATOR
+#
+# local application identifier
+LOCAL_ID = XSAT-MCS
+# local password (in hex nibbles)
+LOCAL_PASSWORD = ffdf01449809e4e5e677818892
+#
+# list of the supported services/versions
+SERVER_TYPES ={
+   SRV_ID = RAF
+   SRV_VERSION = {
+      1
+   }
+   #
+   SRV_ID = RCF
+   SRV_VERSION = {
+      1
+   }
+   #
+   SRV_ID = CLTU
+   SRV_VERSION = {
+      1
+   }
+}
+#
+# list of remote peers
+REMOTE_PEERS = {
+   # peer username
+   ID = SLENET1-GSX-TLM
+   # peer password (in hex nibbles, to allow all characters)
+   PASSWORD = 000102030405060708090a0b0c0d0e0f
+   # authentication mode (NONE or BIND or ALL)
+   AUTHENTICATION_MODE = BIND
+   #
+   ID = SLENET1-GSX-TC
+   PASSWORD = ff23a67babcd01
+   AUTHENTICATION_MODE = ALL
+   #
+   ID = SLENET2-GSY-TMP
+   PASSWORD = 000000000000   #dummy
+   AUTHENTICATION_MODE = NONE
+}
+#
+# list of foreign responder ports
+FOREIGN_LOGICAL_PORTS = {
+   # logical port name
+   PORT_NAME = GSX_TM1
+   # heartbeat timer value
+   PORT_HEARTBEAT_TIMER = 30
+   # heartbeat dead factor
+   PORT_DEAD_FACTOR	= 5
+   # IP address (host:port)
+   IP_ADDRESS = {
+      test.ip1.com:5008
+   }
+   TCP_XMIT_BUFFER_SIZE = 32768
+   TCP_RECV_BUFFER_SIZE = 32768
+#
+   PORT_NAME = GSX_TC1
+   PORT_HEARTBEAT_TIMER = 20
+   PORT_DEAD_FACTOR	= 5
+   IP_ADDRESS = {
+      test.ip2.com:5008
+      test.ip3.com:5008
+   }
+   TCP_XMIT_BUFFER_SIZE = 16384
+   TCP_RECV_BUFFER_SIZE = 16384
+#
+   PORT_NAME = SLENET2-TMP
+   PORT_HEARTBEAT_TIMER = 60
+   PORT_DEAD_FACTOR	= 5
+   HOST_NAME = {
+     tmp1.gsy.slenet2.com:3050
+   }
+   TCP_XMIT_BUFFER_SIZE = 8192
+   TCP_RECV_BUFFER_SIZE = 8192
+}
+#
+# maximum transmit queue size (PDUs)
+TRANSMIT_QUEUE_SIZE = 10
+#
+# maximum authentication delay (seconds)
+AUTHENTICATION_DELAY = 180
+#
+# maximum length of trace output for strings (characters)
+MAX_TRACE_LENGTH	= 256
+#
+# ----------------- end of file ----------------

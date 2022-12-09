@@ -1,0 +1,36 @@
+ISP1-RAF-PDUS
+DEFINITIONS
+IMPLICIT TAGS
+::= BEGIN
+
+IMPORTS SleAcknowledgement
+,       SleScheduleStatusReportInvocation
+,       SleScheduleStatusReportReturn
+,       SleStopInvocation
+FROM CCSDS-SLE-TRANSFER-SERVICE-COMMON-PDUS
+
+        RafGetParameterInvocation
+,       RafStartInvocation
+FROM CCSDS-SLE-TRANSFER-SERVICE-RAF-INCOMING-PDUS
+
+        RafStartReturn
+,       RafTransferBuffer
+,       RafStatusReportInvocation
+,       RafStatusReportInvocationV1
+,       RafGetParameterReturn
+FROM CCSDS-SLE-TRANSFER-SERVICE-RAF-OUTGOING-PDUS
+;
+
+RafStartInvocationPdu                ::= --$ PDU RAF -- [0] RafStartInvocation
+RafStartReturnPdu                    ::= --$ PDU RAF -- [1] RafStartReturn
+RafStopInvocationPdu                 ::= --$ PDU RAF -- [2] SleStopInvocation
+RafStopReturnPdu                     ::= --$ PDU RAF -- [3] SleAcknowledgement
+RafScheduleStatusReportInvocationPdu ::= --$ PDU RAF -- [4] SleScheduleStatusReportInvocation
+RafScheduleStatusReportReturnPdu     ::= --$ PDU RAF -- [5] SleScheduleStatusReportReturn
+RafGetParameterInvocationPdu         ::= --$ PDU RAF -- [6] RafGetParameterInvocation
+RafGetParameterReturnPdu             ::= --$ PDU RAF -- [7] RafGetParameterReturn
+RafTransferBufferPdu                 ::= --$ PDU RAF -- [8] RafTransferBuffer
+RafStatusReportInvocationPdu         ::= --$ PDU RAF -- [9] RafStatusReportInvocation
+RafStatusReportInvocationV1Pdu       ::= --$ PDU RAF -- [9] RafStatusReportInvocationV1
+
+END

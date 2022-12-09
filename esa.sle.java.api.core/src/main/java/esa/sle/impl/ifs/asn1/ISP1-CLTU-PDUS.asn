@@ -1,0 +1,58 @@
+ISP1-CLTU-PDUS
+DEFINITIONS
+IMPLICIT TAGS
+::= BEGIN
+
+IMPORTS SleBindInvocation
+,       SleBindReturn
+,       SlePeerAbort
+,       SleUnbindInvocation
+,       SleUnbindReturn
+FROM CCSDS-SLE-TRANSFER-SERVICE-BIND-TYPES 
+
+        SleAcknowledgement
+,       SleScheduleStatusReportInvocation
+,       SleScheduleStatusReportReturn
+,       SleStopInvocation
+FROM CCSDS-SLE-TRANSFER-SERVICE-COMMON-PDUS
+
+        CltuGetParameterInvocation
+,       CltuStartInvocation
+,       CltuStartInvocationV1
+,       CltuThrowEventInvocation
+,       CltuTransferDataInvocation
+FROM CCSDS-SLE-TRANSFER-SERVICE-CLTU-INCOMING-PDUS
+
+        CltuAsyncNotifyInvocation
+,       CltuGetParameterReturn
+,       CltuGetParameterReturnV4
+,       CltuGetParameterReturnV1To3
+,       CltuStartReturn
+,       CltuStatusReportInvocation
+,       CltuThrowEventReturn
+,       CltuTransferDataReturn
+FROM CCSDS-SLE-TRANSFER-SERVICE-CLTU-OUTGOING-PDUS
+
+
+
+;
+
+CltuStartInvocationPdu                ::= --$ PDU CLTU --  [0] CltuStartInvocation
+CltuStartInvocationV1Pdu              ::= --$ PDU CLTU --  [0] CltuStartInvocationV1
+CltuStartReturnPdu                    ::= --$ PDU CLTU --  [1] CltuStartReturn
+CltuStopInvocationPdu                 ::= --$ PDU CLTU --  [2] SleStopInvocation
+CltuStopReturnPdu                     ::= --$ PDU CLTU --  [3] SleAcknowledgement
+CltuScheduleStatusReportInvocationPdu ::= --$ PDU CLTU --  [4] SleScheduleStatusReportInvocation
+CltuScheduleStatusReportReturnPdu     ::= --$ PDU CLTU --  [5] SleScheduleStatusReportReturn
+CltuGetParameterInvocationPdu         ::= --$ PDU CLTU --  [6] CltuGetParameterInvocation
+CltuGetParameterReturnPdu             ::= --$ PDU CLTU --  [7] CltuGetParameterReturn
+CltuGetParameterReturnPduV4           ::= --$ PDU CLTU --  [7] CltuGetParameterReturnV4
+CltuGetParameterReturnPduV1to3        ::= --$ PDU CLTU --  [7] CltuGetParameterReturnV1To3
+CltuThrowEventInvocationPdu           ::= --$ PDU CLTU --  [8] CltuThrowEventInvocation
+CltuThrowEventReturnPdu               ::= --$ PDU CLTU --  [9] CltuThrowEventReturn
+CltuTransferDataInvocationPdu         ::= --$ PDU CLTU -- [10] CltuTransferDataInvocation
+CltuTransferDataReturnPdu             ::= --$ PDU CLTU -- [11] CltuTransferDataReturn
+CltuAsyncNotifyInvocationPdu          ::= --$ PDU CLTU -- [12] CltuAsyncNotifyInvocation
+CltuStatusReportInvocationPdu         ::= --$ PDU CLTU -- [13] CltuStatusReportInvocation
+
+END

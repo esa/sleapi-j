@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+
+  <parent>
+		<groupId>esa.sle.java</groupId>
+		<artifactId>esa.sle.java</artifactId>
+		<version>5.1.4-SNAPSHOT</version>
+  </parent>
+
+	<artifactId>esa.sle.java.api.feature.p2</artifactId>
+	<packaging>eclipse-repository</packaging>
+	<name>esa.sle.java.api.feature.p2</name>
+
+	<distributionManagement>
+      <repository>
+        <id>vsdenexus</id>
+        <url>https://vsdenexus.esoc.esa.int/nexus/content/sites/cda-p2-site/</url>
+      </repository>
+	  <site>	
+      	<id>vsdenexus</id>
+      	<url>dav:https://vsdenexus.esoc.esa.int/nexus/content/sites/cda-p2-site/esa/sle/java/api/repository-p2-${project.version}</url>
+	  </site>            
+	</distributionManagement>
+
+	<build>
+		<plugins>
+			<!-- Create a p2 repository for all features specified in category.xml -->
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-p2-repository-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<executions>
+					<execution>
+						<id>assemble-repository</id>
+						<goals>
+							<goal>assemble-repository</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<includeAllDependencies>false</includeAllDependencies>
+				</configuration>
+			</plugin>
+
+			<!-- upload the P2 repository as is to maven -->
+			<plugin>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.9.1</version>
+				<executions>
+					<execution>
+						<id>deploy-p2-site</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+						<inherited>false</inherited>
+						<configuration>
+							<inputDirectory>${project.build.directory}/repository</inputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.wagon</groupId>
+						<artifactId>wagon-webdav-jackrabbit</artifactId>
+						<version>3.2.0</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>

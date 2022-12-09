@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Test SLE API core
+Bundle-SymbolicName: esa.sle.java.api.core.test
+Bundle-Version: 5.1.4.qualifier
+Fragment-Host: esa.sle.java.api.core;bundle-version="5.1.1"
+Automatic-Module-Name: esa.sle.java.api.core.test
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8,JavaSE-11
+Require-Bundle: org.junit;bundle-version="4.11.0",
+ javax.annotation;bundle-version="1.2.0"

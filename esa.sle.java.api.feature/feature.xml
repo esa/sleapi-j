@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="esa.sle.java.api.feature"
+      label="SLEJAVA OSGI FEATURE"
+      version="5.1.4.qualifier">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.osgi"/>
+      <import plugin="org.eclipse.osgi.services"/>
+   </requires>
+
+   <plugin
+         id="esa.sle.osgi"
+         download-size="0"
+         install-size="0"
+         version="5.1.4.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="esa.sle.service.loader"
+         download-size="0"
+         install-size="0"
+         version="5.1.4.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="esa.sle.si.repository"
+         download-size="0"
+         install-size="0"
+         version="5.1.4.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="esa.sle.sicf.si.descriptors"
+         download-size="0"
+         install-size="0"
+         version="5.1.4.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="esa.sle.sicf.si.parser.file"
+         download-size="0"
+         install-size="0"
+         version="5.1.4.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="esa.sle.java.api.core"
+         download-size="0"
+         install-size="0"
+         version="5.1.4.qualifier"/>
+
+   <plugin
+         id="esa.sle.java.api.core.test.harness"
+         download-size="0"
+         install-size="0"
+         version="5.1.4.qualifier"
+         unpack="false"/>
+
+</feature>

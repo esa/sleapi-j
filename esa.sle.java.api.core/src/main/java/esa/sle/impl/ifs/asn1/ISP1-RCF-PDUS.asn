@@ -1,0 +1,47 @@
+ISP1-RCF-PDUS
+DEFINITIONS
+IMPLICIT TAGS
+::= BEGIN
+
+IMPORTS SleBindInvocation
+,       SleBindReturn
+,       SlePeerAbort
+,       SleUnbindInvocation
+,       SleUnbindReturn
+FROM CCSDS-SLE-TRANSFER-SERVICE-BIND-TYPES 
+
+        SleAcknowledgement
+,       SleScheduleStatusReportInvocation
+,       SleScheduleStatusReportReturn
+,       SleStopInvocation
+FROM CCSDS-SLE-TRANSFER-SERVICE-COMMON-PDUS
+
+        RcfGetParameterInvocation
+,       RcfStartInvocation
+FROM CCSDS-SLE-TRANSFER-SERVICE-RCF-INCOMING-PDUS
+
+        RcfStartReturn
+,       RcfTransferBuffer
+,       RcfStatusReportInvocation
+,       RcfStatusReportInvocationV1
+,       RcfGetParameterReturn
+,       RcfGetParameterReturnV2To4
+,       RcfGetParameterReturnV1
+FROM CCSDS-SLE-TRANSFER-SERVICE-RCF-OUTGOING-PDUS
+;
+
+RcfStartInvocationPdu                ::= --$ PDU RCF -- [0] RcfStartInvocation
+RcfStartReturnPdu                    ::= --$ PDU RCF -- [1] RcfStartReturn
+RcfStopInvocationPdu                 ::= --$ PDU RCF -- [2] SleStopInvocation
+RcfStopReturnPdu                     ::= --$ PDU RCF -- [3] SleAcknowledgement
+RcfScheduleStatusReportInvocationPdu ::= --$ PDU RCF -- [4] SleScheduleStatusReportInvocation
+RcfScheduleStatusReportReturnPdu     ::= --$ PDU RCF -- [5] SleScheduleStatusReportReturn
+RcfGetParameterInvocationPdu         ::= --$ PDU RCF -- [6] RcfGetParameterInvocation
+RcfGetParameterReturnPdu             ::= --$ PDU RCF -- [7] RcfGetParameterReturn
+RcfGetParameterReturnPduV2To4        ::= --$ PDU RCF -- [7] RcfGetParameterReturnV2To4
+RcfGetParameterReturnV1Pdu           ::= --$ PDU RCF -- [7] RcfGetParameterReturnV1
+RcfTransferBufferPdu                 ::= --$ PDU RCF -- [8] RcfTransferBuffer
+RcfStatusReportInvocationPdu         ::= --$ PDU RCF -- [9] RcfStatusReportInvocation
+RcfStatusReportInvocationV1Pdu       ::= --$ PDU RCF -- [9] RcfStatusReportInvocationV1
+
+END

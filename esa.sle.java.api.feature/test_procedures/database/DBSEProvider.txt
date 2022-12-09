@@ -1,0 +1,12 @@
+# Service Element Database
+##########################
+#Application_Id   = Harness_Appl_1
+APPLICATION_ROLE = provider
+
+PORTLIST  = {
+  default = ISP1
+}
+
+Min_ReportingCycle = 8
+Max_ReportingCycle = 60
+

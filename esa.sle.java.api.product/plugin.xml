@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="id"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            cardinality="singleton-global"
+            thread="main"
+            visible="true">
+      </application>
+   </extension>
+   <extension
+         id="esa.sle.java.api.product"
+         name="SLE APi java"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="esa.sle.java.api.product"
+            name="name">
+      </product>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="esa.sle.java.api.product.id"
+            name="SLE API Java">
+         <property
+               name="appName"
+               value="SLE API Java">
+         </property>
+      </product>
+   </extension>
+
+</plugin>

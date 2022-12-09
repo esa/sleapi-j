@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: esa.sle.service.loader
+Bundle-SymbolicName: esa.sle.service.loader
+Bundle-Version: 5.1.4.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8,JavaSE-11
+Import-Package: org.osgi.framework,
+ org.osgi.service.component
+Require-Bundle: esa.sle.java.api.core;bundle-version="5.1.1",
+ esa.sle.sicf.si.descriptors,
+ esa.sle.osgi
+Export-Package: esa.sle.service.loader,
+ esa.sle.service.loader.impl

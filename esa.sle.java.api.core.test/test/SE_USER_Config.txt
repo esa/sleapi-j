@@ -1,0 +1,19 @@
+# --------------------------------------------
+# SLE API Package - V-2.0 or higher - Nov. 2004
+# Service Element Configuration File - USER 
+#          == EXAMPLE ONLY ==
+# --------------------------------------------
+
+APPLICATION_ROLE = USER
+#
+# port to protocol mapping
+PORTLIST  = {
+  # (peer responder port identifier) = (protocol id)
+  default = ISP1
+}
+#
+# maximum length of trace output for strings (characters)
+MAX_TRACE_LENGTH	= 256
+#
+# ----------------- end of file ----------------
+

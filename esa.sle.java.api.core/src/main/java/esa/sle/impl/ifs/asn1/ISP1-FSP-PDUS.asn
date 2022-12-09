@@ -1,0 +1,59 @@
+ISP1-FSP-PDUS
+DEFINITIONS
+IMPLICIT TAGS
+::= BEGIN
+
+IMPORTS SleBindInvocation
+,       SleBindReturn
+,       SlePeerAbort
+,       SleUnbindInvocation
+,       SleUnbindReturn
+FROM CCSDS-SLE-TRANSFER-SERVICE-BIND-TYPES 
+
+        SleAcknowledgement
+,       SleScheduleStatusReportInvocation
+,       SleScheduleStatusReportReturn
+,       SleStopInvocation
+FROM CCSDS-SLE-TRANSFER-SERVICE-COMMON-PDUS
+
+        FspGetParameterInvocation
+,       FspInvokeDirectiveInvocation
+,       FspStartInvocation
+,       FspThrowEventInvocation
+,       FspTransferDataInvocation
+FROM CCSDS-SLE-TRANSFER-SERVICE-FSP-INCOMING-PDUS
+
+        FspAsyncNotifyInvocation
+,       FspAsyncNotifyInvocationV1To4        
+,       FspGetParameterReturn
+,       FspGetParameterReturnV2to4
+,       FspGetParameterReturnV1
+,       FspInvokeDirectiveReturn
+,       FspStartReturn
+,       FspStatusReportInvocation
+,       FspThrowEventReturn
+,       FspTransferDataReturn
+FROM CCSDS-SLE-TRANSFER-SERVICE-FSP-OUTGOING-PDUS 
+;
+
+FspStartInvocationPdu                ::= --$ PDU FSP --  [0] FspStartInvocation
+FspStartReturnPdu                    ::= --$ PDU FSP --  [1] FspStartReturn
+FspStopInvocationPdu                 ::= --$ PDU FSP --  [2] SleStopInvocation
+FspStopReturnPdu                     ::= --$ PDU FSP --  [3] SleAcknowledgement
+FspScheduleStatusReportInvocationPdu ::= --$ PDU FSP --  [4] SleScheduleStatusReportInvocation
+FspScheduleStatusReportReturnPdu     ::= --$ PDU FSP --  [5] SleScheduleStatusReportReturn
+FspGetParameterInvocationPdu         ::= --$ PDU FSP --  [6] FspGetParameterInvocation
+FspGetParameterReturnPdu             ::= --$ PDU FSP --  [7] FspGetParameterReturn
+FspGetParameterReturnPduV2to4        ::= --$ PDU FSP --  [7] FspGetParameterReturnV2to4
+FspGetParameterReturnV1Pdu           ::= --$ PDU FSP --  [7] FspGetParameterReturnV1
+FspThrowEventInvocationPdu           ::= --$ PDU FSP --  [8] FspThrowEventInvocation
+FspThrowEventReturnPdu               ::= --$ PDU FSP --  [9] FspThrowEventReturn
+FspTransferDataInvocationPdu         ::= --$ PDU FSP -- [10] FspTransferDataInvocation
+FspTransferDataReturnPdu             ::= --$ PDU FSP -- [11] FspTransferDataReturn
+FspAsyncNotifyInvocationPdu          ::= --$ PDU FSP -- [12] FspAsyncNotifyInvocation
+FspAsyncNotifyInvocationPduV1To4     ::= --$ PDU FSP -- [12] FspAsyncNotifyInvocationV1To4
+FspStatusReportInvocationPdu         ::= --$ PDU FSP -- [13] FspStatusReportInvocation
+FspInvokeDirectiveInvocationPdu      ::= --$ PDU FSP -- [14] FspInvokeDirectiveInvocation
+FspInvokeDirectiveReturnPdu          ::= --$ PDU FSP -- [15] FspInvokeDirectiveReturn
+
+END 

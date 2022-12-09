@@ -1,0 +1,18 @@
+ISP1-SLE-BIND-PDUS
+DEFINITIONS
+IMPLICIT TAGS
+::= BEGIN
+
+IMPORTS SleBindInvocation
+,       SleBindReturn
+,       SleUnbindInvocation
+,       SleUnbindReturn
+FROM CCSDS-SLE-TRANSFER-SERVICE-BIND-TYPES
+;
+
+SleBindInvocationPdu    ::= --$ PDU SLE -- [100] SleBindInvocation
+SleBindReturnPdu        ::= --$ PDU SLE -- [101] SleBindReturn
+SleUnbindInvocationPdu  ::= --$ PDU SLE -- [102] SleUnbindInvocation
+SleUnbindReturnPdu      ::= --$ PDU SLE -- [103] SleUnbindReturn
+
+END

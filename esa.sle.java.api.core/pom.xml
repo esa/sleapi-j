@@ -1,0 +1,139 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>esa.sle.java</groupId>
+		<artifactId>esa.sle.java</artifactId>
+		<version>5.1.4-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>esa.sle.java.api.core</artifactId>
+	<packaging>eclipse-plugin</packaging>
+  
+	<dependencies>
+		<dependency>
+			<groupId>com.beanit</groupId>
+			<artifactId>jasn1-compiler</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.beanit</groupId>
+			<artifactId>jasn1</artifactId>
+			<scope>compile</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+	  <sourceDirectory>src/main</sourceDirectory>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>3.2.0</version>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>src/main/generated</directory>
+							<includes>
+								<include>**/*</include>
+							</includes>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>
+			<plugin>
+	                <groupId>org.codehaus.mojo</groupId>
+	                <artifactId>exec-maven-plugin</artifactId>
+					<version>3.0.0</version>
+	                <executions>
+	                    <execution>
+	                        <id>generate-asn-sources</id>
+	                        <phase>generate-sources</phase>
+	                        <goals>
+	                            <goal>exec</goal>
+	                        </goals>
+	                        <configuration>
+	                            <executable>java</executable>
+	                            <arguments>
+	                                <argument>-classpath</argument>
+	                                <classpath>
+	                                    <dependency>com.beanit:jasn1-compiler</dependency>
+	                                    <dependency>com.beanit:jasn1</dependency>
+	                                    <dependency>antlr:antlr</dependency>
+	                                </classpath>
+	                                <argument>com.beanit.jasn1.compiler.Compiler</argument>
+	                                <argument>-o</argument>
+	                                <argument>${basedir}/src/main/generated</argument>
+	                                <argument>-f</argument>
+									<!--  Common Module Compilation -->
+	                                <argument>${basedir}/src/main/java/esa/sle/impl/ifs/asn1/CCSDS-SLE-TRANSFER-SERVICE-COMMON-TYPES.asn</argument>
+	                                <argument>${basedir}/src/main/java/esa/sle/impl/ifs/asn1/CCSDS-SLE-TRANSFER-SERVICE-COMMON-PDUS.asn</argument>
+	                                <argument>${basedir}/src/main/java/esa/sle/impl/ifs/asn1/ISP1-CREDENTIALS.asn</argument>
+	                                <argument>${basedir}/src/main/java/esa/sle/impl/ifs/asn1/CCSDS-SLE-TRANSFER-SERVICE-BIND-TYPES.asn</argument>
+	                                <argument>${basedir}/src/main/java/esa/sle/impl/ifs/asn1/ISP1-SLE-BIND-PDUS.asn</argument>
+									<!-- RAF Module Compilation -->
+	                                <argument>${basedir}/src/main/java/esa/sle/impl/ifs/asn1/CCSDS-SLE-TRANSFER-SERVICE-RAF-INCOMING-PDUS.asn</argument>
+	                                <argument>${basedir}/src/main/java/esa/sle/impl/ifs/asn1/CCSDS-SLE-TRANSFER-SERVICE-RAF-OUTGOING-PDUS.asn</argument>
+	                                <argument>${basedir}/src/main/java/esa/sle/impl/ifs/asn1/CCSDS-SLE-TRANSFER-SERVICE-RAF-STRUCTURES.asn</argument>
+	                                <argument>${basedir}/src/main/java/esa/sle/impl/ifs/asn1/ISP1-RAF-PDUS.asn</argument>
+									<!-- CLTU Module Compilation -->
+	                                <argument>${basedir}/src/main/java/esa/sle/impl/ifs/asn1/CCSDS-SLE-TRANSFER-SERVICE-CLTU-INCOMING-PDUS.asn</argument>
+	                                <argument>${basedir}/src/main/java/esa/sle/impl/ifs/asn1/CCSDS-SLE-TRANSFER-SERVICE-CLTU-OUTGOING-PDUS.asn</argument>
+	                                <argument>${basedir}/src/main/java/esa/sle/impl/ifs/asn1/CCSDS-SLE-TRANSFER-SERVICE-CLTU-STRUCTURES.asn</argument>
+	                                <argument>${basedir}/src/main/java/esa/sle/impl/ifs/asn1/ISP1-CLTU-PDUS.asn</argument>
+									<!-- RCF Module Compilation -->
+	                                <argument>${basedir}/src/main/java/esa/sle/impl/ifs/asn1/CCSDS-SLE-TRANSFER-SERVICE-RCF-INCOMING-PDUS.asn</argument>
+	                                <argument>${basedir}/src/main/java/esa/sle/impl/ifs/asn1/CCSDS-SLE-TRANSFER-SERVICE-RCF-OUTGOING-PDUS.asn</argument>
+	                                <argument>${basedir}/src/main/java/esa/sle/impl/ifs/asn1/CCSDS-SLE-TRANSFER-SERVICE-RCF-STRUCTURES.asn</argument>
+	                                <argument>${basedir}/src/main/java/esa/sle/impl/ifs/asn1/ISP1-RCF-PDUS.asn</argument>
+									<!-- ROCF Module Compilation -->
+	                                <argument>${basedir}/src/main/java/esa/sle/impl/ifs/asn1/CCSDS-SLE-TRANSFER-SERVICE-ROCF-INCOMING-PDUS.asn</argument>
+	                                <argument>${basedir}/src/main/java/esa/sle/impl/ifs/asn1/CCSDS-SLE-TRANSFER-SERVICE-ROCF-OUTGOING-PDUS.asn</argument>
+	                                <argument>${basedir}/src/main/java/esa/sle/impl/ifs/asn1/CCSDS-SLE-TRANSFER-SERVICE-ROCF-STRUCTURES.asn</argument>
+	                                <argument>${basedir}/src/main/java/esa/sle/impl/ifs/asn1/ISP1-ROCF-PDUS.asn</argument>
+									<!-- FSP Module Compilation -->
+	                                <argument>${basedir}/src/main/java/esa/sle/impl/ifs/asn1/CCSDS-SLE-TRANSFER-SERVICE-FSP-INCOMING-PDUS.asn</argument>
+	                                <argument>${basedir}/src/main/java/esa/sle/impl/ifs/asn1/CCSDS-SLE-TRANSFER-SERVICE-FSP-OUTGOING-PDUS.asn</argument>
+	                                <argument>${basedir}/src/main/java/esa/sle/impl/ifs/asn1/CCSDS-SLE-TRANSFER-SERVICE-FSP-STRUCTURES.asn</argument>
+	                                <argument>${basedir}/src/main/java/esa/sle/impl/ifs/asn1/ISP1-FSP-PDUS.asn</argument>
+	                            </arguments>
+	                            <longModulepath>true</longModulepath>
+	                        </configuration>
+	                    </execution>
+	                </executions>
+	            </plugin>
+	            <plugin>
+		            <groupId>org.apache.maven.plugins</groupId>
+		            <artifactId>maven-dependency-plugin</artifactId>
+		            <version>2.10</version>
+		            <executions>
+		                <execution>
+		                    <id>copy-libraries</id>
+		                    <phase>validate</phase>
+		                    <goals>
+		                        <goal>copy</goal>
+		                    </goals>
+		                    <configuration>
+		                        <artifactItems>
+		                            <item>
+										<groupId>com.beanit</groupId>
+										<artifactId>jasn1-compiler</artifactId>
+		                            </item>
+		                            <item>
+										<groupId>com.beanit</groupId>
+										<artifactId>jasn1</artifactId>
+		                            </item>
+		                        </artifactItems>
+		                        <outputDirectory>lib</outputDirectory>
+		                        <stripVersion>true</stripVersion>
+		                        <overWriteReleases>true</overWriteReleases>
+		                        <overWriteSnapshots>true</overWriteSnapshots>
+		                    </configuration>
+		                </execution>
+		            </executions>
+		        </plugin>
+	    </plugins>
+	</build>
+
+</project>
