@@ -20,8 +20,8 @@
 
 	<distributionManagement>
 		<repository>
-			<id>vsdenexus</id>
-			<url>https://vsdenexus.esoc.esa.int/nexus/content/repositories/systems-accepted</url>
+			<id>gitlab.codev-maven</id>
+			<url>https://gitlab.space-codev.org/api/v4/projects/181/packages/maven</url>
 		</repository>
 	</distributionManagement>
 
