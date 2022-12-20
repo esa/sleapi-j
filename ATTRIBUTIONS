@@ -1,0 +1,37 @@
+ATTRIBUTIONS
+
+This software uses the following.
+
+Component	ASN1bean
+Version 	1.11.2
+License	        Apache License 2.0
+Home Page	https://www.beanit.com/asn1/
+Justification	This component is released under a permissive software license. It is used unmodified and dynamically linked against ESA software. In such conditions, its license has no effect on ESA software license.
+Usage Type	Prerequisite (Dynamic Library)
+Comment 	Import/include statement and/or libraries present in the distribution
+
+
+Component       ANTLR
+Version         unspecified
+License	        BSD 3-clause "New" or "Revised" License
+Home Page	http://code.google.com/p/hamcrest/
+Justification	This component is released under a permissive software license. It is used unmodified and dynamically linked against ESA software. In such conditions, its license has no effect on ESA software license.
+Usage Type	Prerequisite (Dynamic Library)
+Comment 	Import/include statement and/or libraries present in the distribution
+
+Component	Eclipse Project
+Version 	unspecified
+License	        Eclipse Public License 1.0
+Home Page	http://www.eclipse.org/eclipse/index.php
+Justification	This component is released under a weak copyleft software license. It is used unmodified and dynamically linked against ESA software. In such conditions, its license has no effect on ESA software license.
+Usage Type	Prerequisite (Dynamic Library)
+Comment 	Import/include statement and/or libraries present in the distribution
+
+Component	Sun Java Platform Standard Edition (JRE) (J2RE)
+Version 	unspecified
+License	        Oracle Binary Code License Agreement for the Java SE Platform Products and JavaFX
+Home Page	http://www.oracle.com/technetwork/java/javase/downloads/index.html?jre
+Justification	This component is released under a proprietary license with no copyleft clause and that can be used without fee. In such conditions, its license has no effect on ESA software license.
+Usage Type	Prerequisite (Dynamic Library)
+Comment 	Import/include statement and/or libraries present in the distribution
+
