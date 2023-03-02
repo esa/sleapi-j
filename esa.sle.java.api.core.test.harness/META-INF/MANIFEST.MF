@@ -3,7 +3,7 @@ Main-Class: esa.sle.impl.tst.systst.THApiexe
 Bundle-ManifestVersion: 2
 Bundle-Name: SLE API Test Harness
 Bundle-SymbolicName: esa.sle.java.api.core.test.harness
-Bundle-Version: 5.1.4.qualifier
+Bundle-Version: 5.1.4
 Automatic-Module-Name: esa.sle.java.api.core.test.harness
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8,JavaSE-11
 Require-Bundle: esa.sle.java.api.core;bundle-version="5.1.1"

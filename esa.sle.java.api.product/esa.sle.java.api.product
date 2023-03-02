@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="ESA SLE API Java" uid="esa.sle.java.api" id="esa.sle.java.api.product.product" application="esa.sle.java.api.product.id" version="5.1.4.qualifier" useFeatures="true" includeLaunchers="false">
+<product name="ESA SLE API Java" uid="esa.sle.java.api" id="esa.sle.java.api.product.product" application="esa.sle.java.api.product.id" version="5.1.4" useFeatures="true" includeLaunchers="false">
 
    <configIni use="default">
    </configIni>

@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>esa.sle.java</groupId>
 		<artifactId>esa.sle.java</artifactId>
-		<version>5.1.4-SNAPSHOT</version>
+		<version>5.1.4</version>
 	</parent>
 
 	<artifactId>esa.sle.osgi</artifactId>
