@@ -7,7 +7,7 @@ Copyright (c) 2006-2022 European Space Agency and others
 The original software was funded by the European Space Agency. 
 The community development of this software is performed at www.space-codev.org.
 
- * Project home: https://gitlab.space-codev.org/ccsds-community/sleapi-j
+ * Project home: https://github.com/esa/sleapi-j.git
 
  ## Trademarks
 
@@ -36,7 +36,7 @@ The community development of this software is performed at www.space-codev.org.
 
  The project maintains the following source code repositories:
 
-  * https://gitlab.space-codev.org/ccsds-community/sleapi-j
+  * https://github.com/esa/sleapi-j.git
 
   ## Third-party Content
 

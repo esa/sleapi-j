@@ -7,6 +7,7 @@ sleapij*.tar
 */export/
 THLoopProvider_*.ctl
 target
+esa.sle.java.api.core/lib/
 
 # Ignore generated files
 **/generated/**
