@@ -20,8 +20,8 @@
 
 	<distributionManagement>
 		<repository>
-			<id>gitlab.codev-maven</id>
-			<url>https://gitlab.space-codev.org/api/v4/projects/181/packages/maven</url>
+			<id>github.sleapi-j</id>
+			<url>https://maven.pkg.github.com/esa/sleapi-j</url>
 		</repository>
 	</distributionManagement>
 
