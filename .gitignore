@@ -8,6 +8,7 @@ sleapij*.tar
 THLoopProvider_*.ctl
 target
 esa.sle.java.api.core/lib/
+.vscode
 
 # Ignore generated files
 **/generated/**
