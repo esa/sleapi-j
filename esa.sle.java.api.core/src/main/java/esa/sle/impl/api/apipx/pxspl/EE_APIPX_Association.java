@@ -2047,10 +2047,10 @@ public abstract class EE_APIPX_Association implements ISLE_SrvProxyInitiate, ISL
                         psii = pSIAdmin.getServiceInstanceIdentifier();
                     }
                 }
-
-                this.reporter.notify(alarm, SLE_Component.sleCP_proxy, psii, messId, text);
-                this.reporter.logRecord(SLE_Component.sleCP_proxy, psii, type, messId, text);
             }
+            
+            this.reporter.notify(alarm, SLE_Component.sleCP_proxy, psii, messId, text);
+            this.reporter.logRecord(SLE_Component.sleCP_proxy, psii, type, messId, text);
         }
     }
 
