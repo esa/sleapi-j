@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
-<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/esa.sle.java.api.core.test.harness/src/esa/sle/impl/tst/systst/THApiexe.java"/>
-</listAttribute>
-<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
-<listEntry value="1"/>
-</listAttribute>
-<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="esa.sle.impl.tst.systst.THApiexe"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-u -x ${workspace_loc}/esa.sle.java.api.feature/test_procedures/database/DBProxyUser.txt -s ${workspace_loc}/esa.sle.java.api.feature/test_procedures/database/DBSEUser.txt -a ${workspace_loc}/esa.sle.java.api.feature/test_procedures/control-v5/fsp5-user.ctl"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="esa.sle.java.api.core.test.harness"/>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+        <listEntry value="/esa.sle.java.api.core.test.harness/src/esa/sle/impl/tst/systst/THApiexe.java"/>
+    </listAttribute>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+        <listEntry value="1"/>
+    </listAttribute>
+    <stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.eclipse.m2e.launchconfig.classpathProvider"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="esa.sle.impl.tst.systst.THApiexe"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-u -x ${workspace_loc}/esa.sle.java.api.feature/test_procedures/database/DBProxyUser.txt -s ${workspace_loc}/esa.sle.java.api.feature/test_procedures/database/DBSEUser.txt -a ${workspace_loc}/esa.sle.java.api.feature/test_procedures/control-v5/fsp5-user.ctl"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="esa.sle.java.api.core.test.harness"/>
+    <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
 </launchConfiguration>
