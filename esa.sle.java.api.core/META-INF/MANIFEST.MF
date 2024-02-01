@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: SLEJAVA
 Bundle-SymbolicName: esa.sle.java.api.core
-Bundle-Version: 5.1.4
+Bundle-Version: 5.1.5
 Export-Package: ccsds.sle.api.isle.exception,
  ccsds.sle.api.isle.iapl,
  ccsds.sle.api.isle.icc,

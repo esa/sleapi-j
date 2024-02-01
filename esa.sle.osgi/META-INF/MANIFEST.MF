@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: esa.sle.osgi
 Bundle-SymbolicName: esa.sle.osgi
-Bundle-Version: 5.1.4
+Bundle-Version: 5.1.5
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8,JavaSE-11
 Export-Package: esa.sle.osgi, esa.sle.osgi.impl
 Require-Bundle: org.eclipse.osgi;bundle-version="3.10.1",
