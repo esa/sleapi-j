@@ -12,12 +12,3 @@ Please follow the "fork-and-pull" workflow.
  4. **Push** your work back up to your fork
  5. Submit a **Merge request** in the origin project
  
-## Issues
-
-Feel free to submit issues and enhancement requests in the Gitlab Issues Tracker of the Gitlab project at https://gitlab.space-codev.org. 
-
-Please do NOT create publicly viewable issues for suspected security vulnerabilities.
-      
-## Security vulnerability disclosure
-
-Please report suspected security vulnerabilities in private to <codev-support@esa.int>.
