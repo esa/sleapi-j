@@ -30,7 +30,15 @@ public class EE_APIPX_CtxMessageFactory implements ITMLMessageFactory
 
         // extract the body
         byte[] body = new byte[msgLength];
-        is.read(body);
+
+		int dataRead = 0;
+		while (dataRead < msgLength) {
+			int currentlyRead = is.read(body, dataRead, msgLength - dataRead);
+			if (currentlyRead <= 0) {
+				throw new SleApiException(HRESULT.EE_E_NOTCTX, "Unexpected end of stream while reading context message");
+			}
+			dataRead += currentlyRead;
+		}
 
         byte[] protocol = new byte[CIProtocolID.length];
 
