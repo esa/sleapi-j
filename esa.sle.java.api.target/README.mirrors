@@ -1,0 +1,9 @@
+To overwrite the eclipse repository URL and use a mirror, add the following to your .m2/settings.xml
+
+       <mirror>        
+                <id>override</id>
+                <mirrorOf>eclipse-repo</mirrorOf>
+                <url>https://my-mirror.eclipse.org/releases/2018-12</url>
+                <layout>p2</layout>
+                <mirrorOfLayouts>p2</mirrorOfLayouts>
+        </mirror>
