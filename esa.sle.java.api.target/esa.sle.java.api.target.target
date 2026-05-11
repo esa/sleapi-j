@@ -18,7 +18,7 @@
 			<unit id="org.junit" version="4.12.0.v201504281640"/>
 			<unit id="org.hamcrest.core" version="1.3.0.v20180420-1519"/>
 			
-			<repository location="https://download.eclipse.org/releases/2018-12"/>
+			<repository id="eclipse-repo" location="https://download.eclipse.org/releases/2018-12"/>
 		</location>
 	</locations>
 	
