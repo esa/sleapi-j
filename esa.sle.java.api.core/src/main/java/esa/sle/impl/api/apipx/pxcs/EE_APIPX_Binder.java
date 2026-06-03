@@ -221,12 +221,20 @@ public class EE_APIPX_Binder implements IEE_Binder, ISLE_TraceControl
      */
     public void cleanupAssocPxy()
     {
-        for (Iterator<EE_APIPX_AssocPxy> it = this.eeAPIPXAssocPxyList.iterator(); it.hasNext();)
+        this.eeMutex.lock();
+        try
         {
-            if (it.next().isClosed())
+            for (Iterator<EE_APIPX_AssocPxy> it = this.eeAPIPXAssocPxyList.iterator(); it.hasNext();)
             {
-                it.remove();
+                if (it.next().isClosed())
+                {
+                    it.remove();
+                }
             }
+        }
+        finally
+        {
+            this.eeMutex.unlock();
         }
     }
 
@@ -236,12 +244,20 @@ public class EE_APIPX_Binder implements IEE_Binder, ISLE_TraceControl
     public void cleanAssoc(EE_APIPX_AssocPxy pAssocPxy)
     {
         // remove the AssocPxy from the link
-        for (Iterator<EE_APIPX_AssocPxy> it = this.eeAPIPXAssocPxyList.iterator(); it.hasNext();)
+        this.eeMutex.lock();
+        try
         {
-            if (it.next().equals(pAssocPxy))
+            for (Iterator<EE_APIPX_AssocPxy> it = this.eeAPIPXAssocPxyList.iterator(); it.hasNext();)
             {
-                it.remove();
+                if (it.next().equals(pAssocPxy))
+                {
+                    it.remove();
+                }
             }
+        }
+        finally
+        {
+            this.eeMutex.unlock();
         }
     }
 
